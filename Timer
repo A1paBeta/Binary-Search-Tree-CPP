@@ -1,0 +1,25 @@
+#ifndef _H_STDLIB
+#include <stdlib.h>
+#define _H_STDLIB
+#endif
+
+#include <time.h>
+
+class Timer{
+    private :
+        clock_t start;
+    public :
+        Timer(){
+            start = clock();   
+        }
+        double getNowExecuteTime(){
+            return (double)(clock()-start)/CLOCKS_PER_SEC;
+        }
+};
+
+void suffleRandom(){
+    srand(time(NULL));
+}
+int getRandomData(){
+    return rand() % 100000 + 1;
+}
